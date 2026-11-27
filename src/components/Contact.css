@@ -1,0 +1,139 @@
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: var(--section-gap);
+  padding: 56px 48px;
+  border-radius: var(--radius-section);
+}
+
+.contact__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__titre {
+  line-height: 1;
+}
+
+.contact__texte {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.contact__infos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contact__info {
+  padding: 20px;
+  border-radius: var(--radius-card-sm);
+}
+
+.contact__info-label {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.contact__info-valeur {
+  display: block;
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+a.contact__info-valeur:hover {
+  color: var(--color-accent);
+}
+
+/* Formulaire */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: var(--radius-card);
+}
+
+.contact__champ {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.contact__champ input,
+.contact__champ select,
+.contact__champ textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(11, 27, 43, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-ink);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact__champ textarea {
+  resize: none;
+}
+
+.contact__champ ::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+.contact__champ input:focus-visible,
+.contact__champ select:focus-visible,
+.contact__champ textarea:focus-visible {
+  outline-offset: 0;
+  border-color: var(--color-accent);
+}
+
+.contact__envoyer {
+  margin-top: 4px;
+  padding: 18px;
+}
+
+@media (max-width: 1023px) {
+  .contact {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 48px 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  .contact {
+    gap: 28px;
+    padding: 36px 16px 16px;
+    border-radius: var(--radius-card);
+  }
+
+  .contact__intro {
+    padding-inline: 4px;
+  }
+
+  .contact__texte {
+    font-size: 17px;
+  }
+
+  .contact__infos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact__form {
+    padding: 22px 18px;
+    border-radius: 28px;
+  }
+}

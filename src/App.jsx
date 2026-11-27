@@ -1,8 +1,11 @@
+import Contact from './components/Contact.jsx'
 import Expertises from './components/Expertises.jsx'
+import Footer from './components/Footer.jsx'
 import Hero from './components/Hero.jsx'
-import Realisations from './components/Realisations.jsx'
 import Marquee from './components/Marquee.jsx'
 import Navbar from './components/Navbar.jsx'
+import Parcours from './components/Parcours.jsx'
+import Realisations from './components/Realisations.jsx'
 
 export default function App() {
   return (
@@ -19,8 +22,11 @@ export default function App() {
         <div className="container">
           <Expertises />
           <Realisations />
+          <Parcours />
+          <Contact />
         </div>
       </main>
+      <Footer />
     </div>
   )
 }

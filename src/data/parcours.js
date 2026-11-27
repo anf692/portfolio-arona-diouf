@@ -1,5 +1,7 @@
 // Parcours : expérience, formation, compétences et habilitations.
 
+export const parcoursTitre = '/PARCOURS'
+
 export const experiences = [
   {
     id: 'poste-actuel',

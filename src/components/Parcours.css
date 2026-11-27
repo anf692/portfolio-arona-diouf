@@ -1,0 +1,161 @@
+.parcours {
+  margin-top: var(--section-gap);
+}
+
+.parcours__grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.parcours__colonne {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.parcours__carte {
+  padding: 36px;
+  border-radius: var(--radius-card);
+}
+
+/* Frise d’expérience */
+.parcours__frise {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.parcours__etape {
+  display: flex;
+  gap: 18px;
+}
+
+.parcours__point {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-accent);
+}
+
+.parcours__point--actuel {
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border: 0;
+  box-shadow: 0 0 0 5px rgba(0, 58, 112, 0.15);
+}
+
+.parcours__periode {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.parcours__intitule {
+  margin: 4px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.parcours__desc {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* Formation */
+.parcours__diplome {
+  margin-top: 18px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.parcours__details {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* Compétences */
+.parcours__competences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* Habilitations */
+.parcours__habilitations {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 30px 36px;
+  border-radius: var(--radius-card);
+  color: var(--color-white);
+}
+
+.parcours__habilitations-icon {
+  flex-shrink: 0;
+}
+
+.parcours__habilitations-titre {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.parcours__habilitations-liste {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--color-text-on-dark);
+}
+
+@media (max-width: 1023px) {
+  .parcours__grille {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .parcours__colonne {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 639px) {
+  .parcours__grille {
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  .parcours__colonne {
+    gap: 16px;
+  }
+
+  .parcours__carte {
+    padding: 26px 22px;
+    border-radius: 28px;
+  }
+
+  .parcours__intitule {
+    font-size: 20px;
+  }
+
+  .parcours__diplome {
+    font-size: 22px;
+  }
+
+  .parcours__habilitations {
+    align-items: flex-start;
+    padding: 24px 22px;
+    border-radius: 28px;
+  }
+}

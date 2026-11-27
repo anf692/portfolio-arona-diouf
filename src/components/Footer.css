@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 48px;
+  padding-bottom: 40px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 639px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-top: 36px;
+    padding-bottom: 32px;
+  }
+}
