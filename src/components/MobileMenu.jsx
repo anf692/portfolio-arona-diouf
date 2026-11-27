@@ -90,10 +90,7 @@ export default function MobileMenu({ onFermer }) {
               onClick={fermerSurLien}
             >
               {cv.label}
-              <span className="mobile-menu__num mobile-menu__cv">
-                PDF
-                <Icon name="telecharger" size={16} strokeWidth={2.4} />
-              </span>
+              <span className="mobile-menu__num">PDF</span>
             </a>
           </li>
         </ul>

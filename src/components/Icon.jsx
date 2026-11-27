@@ -3,7 +3,6 @@
 const tracés = {
   flocon: <path d="M12 2v20M4.9 6l14.2 12M19.1 6 4.9 18M9 3.5 12 6l3-2.5M9 20.5 12 18l3 2.5" />,
   fleche: <path d="M7 17 17 7M8 7h9v9" />,
-  telecharger: <path d="M12 4v11M7 10l5 5 5-5M5 20h14" />,
   menu: <path d="M5 9h14M5 15h14" />,
   fermer: <path d="M6 6l12 12M18 6 6 18" />,
   personne: (

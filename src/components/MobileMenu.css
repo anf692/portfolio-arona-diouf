@@ -62,12 +62,6 @@
   color: var(--color-accent);
 }
 
-.mobile-menu__cv {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
 .mobile-menu__footer {
   display: flex;
   flex-direction: column;

@@ -33,11 +33,10 @@ export default function Navbar() {
             <a
               href={cv.href}
               download={cv.fichier}
-              className="navbar__link navbar__cv"
+              className="navbar__link"
               aria-label={cv.description}
             >
               {cv.label}
-              <Icon name="telecharger" size={16} strokeWidth={2.2} />
             </a>
           </li>
         </ul>
