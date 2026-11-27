@@ -1,10 +1,12 @@
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { liensReseaux, profil } from '../data/profil.js'
 import Icon from './Icon.jsx'
 import './Hero.css'
 
-function HeroPhoto() {
+function HeroPhoto({ y }) {
   return (
-    <div className="hero__photo">
+    <motion.div className="hero__photo" style={{ y }}>
       {profil.photo ? (
         <img className="hero__photo-img" src={profil.photo} alt={profil.photoAlt} fetchPriority="high" />
       ) : (
@@ -23,13 +25,20 @@ function HeroPhoto() {
           <p className="hero__zone-texte">{profil.zone}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 export default function Hero() {
+  const ref = useRef(null)
+  const reduit = useReducedMotion()
+  // Parallaxe liée au scroll : le nom remonte, la photo descend légèrement.
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const yNom = useTransform(scrollYProgress, [0, 1], reduit ? [0, 0] : [0, -80])
+  const yPhoto = useTransform(scrollYProgress, [0, 1], reduit ? [0, 0] : [0, 48])
+
   return (
-    <section id="accueil" className="hero glass" aria-labelledby="hero-nom">
+    <section ref={ref} id="accueil" className="hero glass" aria-labelledby="hero-nom">
       <div className="hero__top">
         <p className="hero__badge glass">
           <span className="hero__dot" aria-hidden="true" />
@@ -41,9 +50,9 @@ export default function Hero() {
         <p className="hero__domaines">{profil.domaines}</p>
       </div>
 
-      <h1 id="hero-nom" className="hero__nom">
+      <motion.h1 id="hero-nom" className="hero__nom" style={{ y: yNom }}>
         <span className="outline">{profil.prenom}</span> <span>{profil.nom}</span>
-      </h1>
+      </motion.h1>
 
       <div className="hero__grid">
         <div className="hero__intro">
@@ -62,7 +71,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <HeroPhoto />
+        <HeroPhoto y={yPhoto} />
 
         <div className="hero__aside">
           <ul className="hero__reseaux" aria-label="Réseaux et contact">

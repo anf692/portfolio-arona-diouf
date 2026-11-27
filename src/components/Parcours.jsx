@@ -6,6 +6,7 @@ import {
   parcoursTitre,
 } from '../data/parcours.js'
 import Icon from './Icon.jsx'
+import Reveal, { Cascade, CascadeItem } from './Reveal.jsx'
 import SectionTitle from './SectionTitle.jsx'
 import './Parcours.css'
 
@@ -15,7 +16,7 @@ export default function Parcours() {
       <SectionTitle id="parcours-titre" titre={parcoursTitre} />
 
       <div className="parcours__grille">
-        <div className="parcours__carte glass">
+        <Reveal className="parcours__carte glass">
           <h3 className="eyebrow">Expérience</h3>
           <ol className="parcours__frise">
             {experiences.map((experience) => (
@@ -32,33 +33,33 @@ export default function Parcours() {
               </li>
             ))}
           </ol>
-        </div>
+        </Reveal>
 
         <div className="parcours__colonne">
-          <div className="parcours__carte glass">
+          <Reveal className="parcours__carte glass">
             <h3 className="eyebrow">Formation</h3>
             <p className="parcours__diplome">{formation.diplome}</p>
             <p className="parcours__details">{formation.details}</p>
-          </div>
+          </Reveal>
 
-          <div className="parcours__carte glass">
+          <Reveal className="parcours__carte glass">
             <h3 className="eyebrow">Compétences</h3>
-            <ul className="parcours__competences">
+            <Cascade className="parcours__competences">
               {competences.map((competence) => (
-                <li key={competence} className="chip glass">
+                <CascadeItem key={competence} className="chip glass">
                   {competence}
-                </li>
+                </CascadeItem>
               ))}
-            </ul>
-          </div>
+            </Cascade>
+          </Reveal>
 
-          <div className="parcours__habilitations glass-dark">
+          <Reveal className="parcours__habilitations glass-dark">
             <Icon name="medaille" size={36} className="parcours__habilitations-icon" />
             <div>
               <h3 className="parcours__habilitations-titre">{habilitations.titre}</h3>
               <p className="parcours__habilitations-liste">{habilitations.liste.join(' · ')}</p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

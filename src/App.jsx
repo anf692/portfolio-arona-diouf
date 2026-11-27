@@ -1,3 +1,4 @@
+import { MotionConfig } from 'motion/react'
 import Contact from './components/Contact.jsx'
 import Expertises from './components/Expertises.jsx'
 import Footer from './components/Footer.jsx'
@@ -9,24 +10,26 @@ import Realisations from './components/Realisations.jsx'
 
 export default function App() {
   return (
-    <div className="page">
-      <a href="#contenu" className="skip-link">
-        Aller au contenu
-      </a>
-      <Navbar />
-      <main id="contenu">
-        <div className="container">
-          <Hero />
-        </div>
-        <Marquee />
-        <div className="container">
-          <Expertises />
-          <Realisations />
-          <Parcours />
-          <Contact />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="page">
+        <a href="#contenu" className="skip-link">
+          Aller au contenu
+        </a>
+        <Navbar />
+        <main id="contenu">
+          <div className="container">
+            <Hero />
+          </div>
+          <Marquee />
+          <div className="container">
+            <Expertises />
+            <Realisations />
+            <Parcours />
+            <Contact />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   )
 }

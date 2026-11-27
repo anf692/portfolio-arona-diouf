@@ -6,6 +6,7 @@ import {
   lienWhatsApp,
   profil,
 } from '../data/profil.js'
+import Reveal, { Cascade, CascadeItem } from './Reveal.jsx'
 import SectionTitle from './SectionTitle.jsx'
 import './Contact.css'
 
@@ -43,7 +44,7 @@ function envoyer(event) {
 function Info({ info }) {
   const lien = info.href && !estEmplacement(info.valeur)
   return (
-    <li className="contact__info glass">
+    <CascadeItem className="contact__info glass">
       <p className="contact__info-label">{info.label}</p>
       {lien ? (
         <a
@@ -56,7 +57,7 @@ function Info({ info }) {
       ) : (
         <p className="contact__info-valeur">{info.valeur}</p>
       )}
-    </li>
+    </CascadeItem>
   )
 }
 
@@ -65,47 +66,51 @@ export default function Contact() {
     <section id="contact" className="contact glass" aria-labelledby="contact-titre">
       <div className="contact__intro">
         <SectionTitle id="contact-titre" titre={contactTitre} className="contact__titre" />
-        <p className="contact__texte">{contactIntro}</p>
-        <ul className="contact__infos">
+        <Reveal as="p" className="contact__texte">
+          {contactIntro}
+        </Reveal>
+        <Cascade className="contact__infos">
           {infos.map((info) => (
             <Info key={info.id} info={info} />
           ))}
-        </ul>
+        </Cascade>
       </div>
 
-      <form className="contact__form glass" onSubmit={envoyer}>
-        <label className="contact__champ">
-          Nom complet
-          <input type="text" name="nom" placeholder="Votre nom" autoComplete="name" required />
-        </label>
-        <label className="contact__champ">
-          Téléphone
-          <input type="tel" name="telephone" placeholder="+221 …" autoComplete="tel" />
-        </label>
-        <label className="contact__champ">
-          Type d’intervention
-          <select name="type" defaultValue={typesIntervention[0]}>
-            {typesIntervention.map((type) => (
-              <option key={type}>{type}</option>
-            ))}
-          </select>
-        </label>
-        <label className="contact__champ">
-          Message
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Décrivez la panne ou le projet…"
-            required
-          />
-        </label>
-        <button type="submit" className="btn btn-primary contact__envoyer" aria-describedby="contact-aide">
-          Envoyer la demande <span aria-hidden="true">↗</span>
-        </button>
-        <p id="contact-aide" className="visually-hidden">
-          Ouvre WhatsApp avec votre message pré-rempli.
-        </p>
-      </form>
+      <Reveal className="contact__form-wrap">
+        <form className="contact__form glass" onSubmit={envoyer}>
+          <label className="contact__champ">
+            Nom complet
+            <input type="text" name="nom" placeholder="Votre nom" autoComplete="name" required />
+          </label>
+          <label className="contact__champ">
+            Téléphone
+            <input type="tel" name="telephone" placeholder="+221 …" autoComplete="tel" />
+          </label>
+          <label className="contact__champ">
+            Type d’intervention
+            <select name="type" defaultValue={typesIntervention[0]}>
+              {typesIntervention.map((type) => (
+                <option key={type}>{type}</option>
+              ))}
+            </select>
+          </label>
+          <label className="contact__champ">
+            Message
+            <textarea
+              name="message"
+              rows={4}
+              placeholder="Décrivez la panne ou le projet…"
+              required
+            />
+          </label>
+          <button type="submit" className="btn btn-primary contact__envoyer" aria-describedby="contact-aide">
+            Envoyer la demande <span aria-hidden="true">↗</span>
+          </button>
+          <p id="contact-aide" className="visually-hidden">
+            Ouvre WhatsApp avec votre message pré-rempli.
+          </p>
+        </form>
+      </Reveal>
     </section>
   )
 }

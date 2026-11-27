@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { expertises, expertisesTitre } from '../data/expertises.js'
 import Icon from './Icon.jsx'
+import { Cascade, CascadeItem } from './Reveal.jsx'
 import SectionTitle from './SectionTitle.jsx'
 import './Expertises.css'
 
@@ -9,7 +10,7 @@ function Expertise({ expertise, ouverte, onBasculer }) {
   const idPanneau = `expertise-${expertise.id}-panneau`
 
   return (
-    <li className={`expertise ${ouverte ? 'expertise--ouverte glass-dark' : 'glass'}`}>
+    <CascadeItem className={`expertise ${ouverte ? 'expertise--ouverte glass-dark' : 'glass'}`}>
       <h3 className="expertise__heading">
         <button
           type="button"
@@ -37,7 +38,7 @@ function Expertise({ expertise, ouverte, onBasculer }) {
           ))}
         </ul>
       </div>
-    </li>
+    </CascadeItem>
   )
 }
 
@@ -49,7 +50,7 @@ export default function Expertises() {
   return (
     <section id="expertises" className="expertises" aria-labelledby="expertises-titre">
       <SectionTitle id="expertises-titre" fond={expertisesTitre.fond} titre={expertisesTitre.titre} />
-      <ul className="expertises__liste">
+      <Cascade className="expertises__liste">
         {expertises.map((expertise) => (
           <Expertise
             key={expertise.id}
@@ -58,7 +59,7 @@ export default function Expertises() {
             onBasculer={() => basculer(expertise.id)}
           />
         ))}
-      </ul>
+      </Cascade>
     </section>
   )
 }

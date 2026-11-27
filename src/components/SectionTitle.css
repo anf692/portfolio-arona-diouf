@@ -21,7 +21,7 @@
   letter-spacing: var(--tracking-title);
 }
 
-.section-title .section-title__h2 {
+.section-title__h2-wrap {
   position: absolute;
   inset: 0;
   display: flex;

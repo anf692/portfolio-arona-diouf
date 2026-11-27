@@ -6,6 +6,7 @@ import {
   realisationsTitre,
 } from '../data/realisations.js'
 import ProjectCard from './ProjectCard.jsx'
+import Reveal, { Cascade, CascadeItem } from './Reveal.jsx'
 import SectionTitle from './SectionTitle.jsx'
 import './Realisations.css'
 
@@ -13,6 +14,8 @@ const libelleCategorie = (id) => filtres.find((filtre) => filtre.id === id)?.lab
 
 export default function Realisations() {
   const [filtreActif, setFiltreActif] = useState('tous')
+  // Après la première apparition au scroll, changer de filtre n’anime plus les cartes.
+  const [revelee, setRevelee] = useState(false)
 
   const visibles =
     filtreActif === 'tous'
@@ -28,7 +31,7 @@ export default function Realisations() {
         variante="lg"
       />
 
-      <div className="realisations__barre">
+      <Reveal className="realisations__barre">
         <div className="realisations__filtres glass" role="group" aria-label="Filtrer les réalisations">
           {filtres.map((filtre) => (
             <button
@@ -49,20 +52,20 @@ export default function Realisations() {
         >
           {lienToutesRealisations.label} <span aria-hidden="true">↗</span>
         </a>
-      </div>
+      </Reveal>
 
       <p className="visually-hidden" aria-live="polite">
         {visibles.length} réalisation{visibles.length > 1 ? 's' : ''} affichée
         {visibles.length > 1 ? 's' : ''}
       </p>
 
-      <ul className="realisations__grille">
+      <Cascade className="realisations__grille" onAnimationComplete={() => setRevelee(true)}>
         {visibles.map((projet) => (
-          <li key={projet.id}>
+          <CascadeItem key={projet.id} initial={revelee ? false : undefined}>
             <ProjectCard projet={projet} categorie={libelleCategorie(projet.categorie)} />
-          </li>
+          </CascadeItem>
         ))}
-      </ul>
+      </Cascade>
     </section>
   )
 }
