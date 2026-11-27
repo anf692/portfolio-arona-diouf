@@ -18,8 +18,8 @@ export const profil = {
   whatsapp: '+221 78 390 15 03',
   email: 'dioufarona913@gmail.com',
   experience: { valeur: '2 ans', texte: 'd’expérience terrain en entreprise' },
-  // Image placée dans public/images/
-  photo: '/images/arona-diouf.jpg',
+  // Image détourée (fond transparent) placée dans public/images/
+  photo: '/images/arona-diouf.webp',
   photoAlt: 'Portrait d’Arona Diouf',
   photoLegende: '[Votre photo en tenue de travail]',
   photoLegendeCourte: '[Votre photo]',

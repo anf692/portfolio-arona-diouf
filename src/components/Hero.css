@@ -107,24 +107,25 @@
   object-position: center 20%;
 }
 
-/* Voile sombre sur la photo, qui s’efface au survol (appareils avec souris) */
+/* Fond blanc fixe : seule la personne (image détourée) passe en sombre,
+   puis retrouve ses couleurs au survol (appareils avec souris) */
+.hero__photo--image {
+  background: var(--color-white);
+}
+
 @media (hover: hover) {
-  .hero__photo--image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(11, 27, 43, 0.45);
-    pointer-events: none;
-    transition: opacity 0.4s var(--ease-out);
+  .hero__photo--image .hero__photo-img {
+    filter: grayscale(1) brightness(0.65);
+    transition: filter 0.4s var(--ease-out);
   }
 
-  .hero__photo--image:hover::before {
-    opacity: 0;
+  .hero__photo--image:hover .hero__photo-img {
+    filter: none;
   }
 }
 
 @media (hover: hover) and (prefers-reduced-motion: reduce) {
-  .hero__photo--image::before {
+  .hero__photo--image .hero__photo-img {
     transition: none;
   }
 }
