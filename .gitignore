@@ -16,7 +16,5 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Kit de maquettes (local uniquement)
+# Maquettes (local uniquement)
 portfolio-froid-kit/
-CLAUDE.md
-.claude/

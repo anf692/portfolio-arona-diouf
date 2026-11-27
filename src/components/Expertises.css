@@ -147,12 +147,16 @@
   }
 
   .expertise__label {
+    min-width: 0;
     gap: 14px;
   }
 
   .expertise__titre {
-    font-size: 22px;
+    min-width: 0;
+    font-size: min(22px, 6.4vw);
     line-height: 1.15;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   .expertise__fleche {

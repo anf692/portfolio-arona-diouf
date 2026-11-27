@@ -1,62 +1,62 @@
-// Chantiers présentés dans la section Réalisations.
+// Interventions réalisées en entreprise (source : stages du CV).
 // Pour ajouter une photo : la placer dans public/images/ et renseigner `image`.
 
 export const realisationsTitre = { fond: 'CHANTIERS', titre: '/RÉALISATIONS' }
 
 export const filtres = [
   { id: 'tous', label: 'Tous' },
-  { id: 'automobile', label: 'Automobile' },
-  { id: 'industriel', label: 'Industriel' },
+  { id: 'froid', label: 'Froid' },
+  { id: 'climatisation', label: 'Climatisation' },
 ]
 
 export const lienToutesRealisations = { label: 'Voir tout', href: '#realisations' }
 
 export const realisations = [
   {
-    id: 'recharge-clim',
-    categorie: 'automobile',
-    titre: 'Diagnostic & recharge clim — [Véhicule]',
+    id: 'conteneurs',
+    categorie: 'froid',
+    titre: 'Conteneurs frigorifiques — SAEFEM, Dakar',
     description:
-      'Recherche de fuite au traceur UV, remplacement du joint défectueux, tirage au vide et recharge au poids constructeur.',
-    tags: ['R1234yf', 'Station de charge', 'Traceur UV'],
+      'Diagnostic et dépannage de conteneurs frigorifiques, tests de leur état, contrôle des températures et lecture des schémas électriques.',
+    tags: ['Conteneurs frigorifiques', 'Fluides frigorigènes', 'Schémas électriques'],
     image: null,
-    legende: '[Photo — intervention clim véhicule]',
-    couleur: 'var(--photo-2)',
-    sombre: false,
-  },
-  {
-    id: 'chambre-froide',
-    categorie: 'industriel',
-    titre: 'Installation chambre froide — [Client]',
-    description:
-      'Pose des panneaux, raccordement frigorifique cuivre, brasage, mise sous azote, tirage au vide et mise en service.',
-    tags: ['Groupe de condensation', 'Brasage', 'Régulation'],
-    image: null,
-    legende: '[Photo — chambre froide]',
+    legende: '[Photo — conteneur frigorifique]',
     couleur: 'var(--photo-dark)',
     sombre: true,
   },
   {
-    id: 'groupe-froid',
-    categorie: 'industriel',
-    titre: 'Maintenance groupe froid — [Site]',
+    id: 'vrv-hotel',
+    categorie: 'climatisation',
+    titre: 'Pré-installation VRV — Hôtel en chantier, Ngor',
     description:
-      'Contrôle des pressions et surchauffe, nettoyage des échangeurs, vérification des sécurités et contrôle d’étanchéité.',
-    tags: ['Manifold', 'Préventif', 'Étanchéité'],
+      'Pré-installation d’une climatisation centrale de type VRV : lecture des plans, choix des équipements, raccordements frigorifiques et électriques.',
+    tags: ['VRV', 'Plans techniques', 'Chalumeau'],
     image: null,
-    legende: '[Photo — groupe froid]',
+    legende: '[Photo — chantier VRV]',
+    couleur: 'var(--photo-2)',
+    sombre: false,
+  },
+  {
+    id: 'installation-split',
+    categorie: 'climatisation',
+    titre: 'Installation de climatiseurs split — Sococim',
+    description:
+      'Pose des unités intérieure et extérieure, raccordements frigorifique et électrique, mise en service, contrôle d’étanchéité et charge en fluide.',
+    tags: ['Split', 'Mise en service', 'Contrôle d’étanchéité'],
+    image: null,
+    legende: '[Photo — climatiseur split]',
     couleur: 'var(--photo-3)',
     sombre: false,
   },
   {
-    id: 'compresseur',
-    categorie: 'automobile',
-    titre: 'Remplacement compresseur — [Véhicule]',
+    id: 'maintenance-split',
+    categorie: 'climatisation',
+    titre: 'Maintenance split & armoires — Sococim',
     description:
-      'Dépose et repose du compresseur, rinçage du circuit, remplacement du filtre déshydrateur et contrôle des performances.',
-    tags: ['Compresseur', 'Rinçage', 'Diagnostic'],
+      'Maintenance préventive et corrective de climatiseurs split et d’armoires de climatisation en environnement industriel.',
+    tags: ['Préventif', 'Correctif', 'Diagnostic'],
     image: null,
-    legende: '[Photo — compresseur]',
+    legende: '[Photo — armoire de climatisation]',
     couleur: 'var(--photo-4)',
     sombre: false,
   },

@@ -3,17 +3,18 @@
 export const contactTitre = '/CONTACT'
 
 export const contactIntro =
-  'Une clim qui ne refroidit plus, une chambre froide à installer ? Décrivez votre besoin, je vous réponds rapidement.'
+  'Une clim qui ne refroidit plus, une installation à prévoir ou un poste de technicien à pourvoir ? Décrivez votre besoin, je vous réponds rapidement.'
 
 export const typesIntervention = [
-  'Climatisation automobile',
+  'Installation de climatisation',
+  'Maintenance / dépannage',
   'Froid industriel',
-  'Installation',
-  'Dépannage',
+  'Étude & dimensionnement',
+  'Proposition d’emploi',
 ]
 
 export const footer = {
   annee: 2026,
   metier: 'Technicien Froid & Climatisation',
-  domaines: 'Automobile · Industriel',
+  domaines: 'Dakar, Sénégal',
 }

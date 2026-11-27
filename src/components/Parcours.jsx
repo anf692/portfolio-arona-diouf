@@ -1,10 +1,4 @@
-import {
-  competences,
-  experiences,
-  formation,
-  habilitations,
-  parcoursTitre,
-} from '../data/parcours.js'
+import { atouts, competences, experiences, formations, parcoursTitre } from '../data/parcours.js'
 import Icon from './Icon.jsx'
 import Reveal, { Cascade, CascadeItem } from './Reveal.jsx'
 import SectionTitle from './SectionTitle.jsx'
@@ -38,8 +32,14 @@ export default function Parcours() {
         <div className="parcours__colonne">
           <Reveal className="parcours__carte glass">
             <h3 className="eyebrow">Formation</h3>
-            <p className="parcours__diplome">{formation.diplome}</p>
-            <p className="parcours__details">{formation.details}</p>
+            <ul className="parcours__formations">
+              {formations.map((formation) => (
+                <li key={formation.id}>
+                  <p className="parcours__diplome">{formation.diplome}</p>
+                  <p className="parcours__details">{formation.details}</p>
+                </li>
+              ))}
+            </ul>
           </Reveal>
 
           <Reveal className="parcours__carte glass">
@@ -56,8 +56,8 @@ export default function Parcours() {
           <Reveal className="parcours__habilitations glass-dark">
             <Icon name="medaille" size={36} className="parcours__habilitations-icon" />
             <div>
-              <h3 className="parcours__habilitations-titre">{habilitations.titre}</h3>
-              <p className="parcours__habilitations-liste">{habilitations.liste.join(' · ')}</p>
+              <h3 className="parcours__habilitations-titre">{atouts.titre}</h3>
+              <p className="parcours__habilitations-liste">{atouts.liste.join(' · ')}</p>
             </div>
           </Reveal>
         </div>

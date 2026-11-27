@@ -80,6 +80,15 @@
   letter-spacing: -0.02em;
 }
 
+.parcours__formations li + li {
+  margin-top: 22px;
+  padding-top: 4px;
+}
+
+.parcours__formations li + li .parcours__diplome {
+  font-size: 20px;
+}
+
 .parcours__details {
   margin-top: 6px;
   font-size: 15px;

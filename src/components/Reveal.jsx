@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import * as m from 'motion/react-m'
 
 // Apparitions au scroll : uniquement opacity et transform.
 const EASE = [0.22, 1, 0.36, 1]
@@ -14,11 +14,11 @@ const cascade = {
 }
 
 const balises = {
-  div: motion.div,
-  ul: motion.ul,
-  ol: motion.ol,
-  li: motion.li,
-  p: motion.p,
+  div: m.div,
+  ul: m.ul,
+  ol: m.ol,
+  li: m.li,
+  p: m.p,
 }
 
 export default function Reveal({ as = 'div', children, ...props }) {

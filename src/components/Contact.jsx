@@ -25,10 +25,10 @@ const infos = [
 
 function composerMessage(donnees) {
   const lignes = [
-    'Bonjour, je souhaite une intervention.',
+    'Bonjour Arona, je vous contacte depuis votre portfolio.',
     `Nom : ${donnees.get('nom')}`,
     donnees.get('telephone') && `Téléphone : ${donnees.get('telephone')}`,
-    `Type d’intervention : ${donnees.get('type')}`,
+    `Objet : ${donnees.get('type')}`,
     `Message : ${donnees.get('message')}`,
   ]
   return lignes.filter(Boolean).join('\n')
@@ -87,7 +87,7 @@ export default function Contact() {
             <input type="tel" name="telephone" placeholder="+221 …" autoComplete="tel" />
           </label>
           <label className="contact__champ">
-            Type d’intervention
+            Type de demande
             <select name="type" defaultValue={typesIntervention[0]}>
               {typesIntervention.map((type) => (
                 <option key={type}>{type}</option>

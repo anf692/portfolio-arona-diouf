@@ -1,28 +1,29 @@
-// Informations personnelles du technicien.
-// Remplacer chaque valeur entre crochets par la vraie information.
+// Informations personnelles du technicien (source : CV d’Arona Diouf).
 
 export const profil = {
-  prenom: 'Prénom',
-  nom: 'Nom',
+  prenom: 'Arona',
+  nom: 'Diouf',
   titre: 'Technicien supérieur',
   specialite: 'Froid & Climatisation automobile et industrielle',
   description:
-    'J’installe, je diagnostique et je dépanne vos systèmes frigorifiques et de climatisation — du véhicule léger à la chambre froide.',
+    'Diplômé d’un BTS Froid et Climatisation, j’installe, je mets en service, j’entretiens et je dépanne vos systèmes frigorifiques et de climatisation — du climatiseur split au conteneur frigorifique.',
   descriptionCourte:
-    'J’installe, je diagnostique et je dépanne vos systèmes de froid et de clim — du véhicule à la chambre froide.',
+    'J’installe, j’entretiens et je dépanne vos systèmes de froid et de clim — du split au conteneur frigorifique.',
   disponibilite: 'Disponible pour interventions',
   disponibiliteSuite: ' & missions',
   domaines: 'Froid · Climatisation · Auto · Industrie',
-  zone: '[Ville] & environs',
-  telephone: '[+221 XX XXX XX XX]',
-  whatsapp: '[+221 XX XXX XX XX]',
-  email: '[adresse@email.com]',
-  anneesExperience: '[X]',
-  // Chemin d’une image placée dans public/images/, par exemple '/images/portrait.jpg'
-  photo: null,
-  photoAlt: '[Prénom Nom] en tenue de travail',
+  zone: 'Dakar & environs',
+  telephone: '+221 78 390 15 03',
+  // Numéro utilisé pour WhatsApp et pour le formulaire de contact
+  whatsapp: '+221 78 390 15 03',
+  email: 'dioufarona913@gmail.com',
+  experience: { valeur: '10 mois', texte: 'd’expérience terrain en entreprise' },
+  // Image placée dans public/images/
+  photo: '/images/arona-diouf.jpg',
+  photoAlt: 'Portrait d’Arona Diouf',
   photoLegende: '[Votre photo en tenue de travail]',
   photoLegendeCourte: '[Votre photo]',
+  // Laisser entre crochets tant que le profil n’existe pas : le lien est alors masqué.
   reseaux: {
     linkedin: '[URL LinkedIn]',
     facebook: '[URL Facebook]',
@@ -47,19 +48,15 @@ export const lienTelephone = estEmplacement(profil.telephone)
 
 export const lienEmail = estEmplacement(profil.email) ? '#contact' : `mailto:${profil.email}`
 
-// Les liens renvoient vers la section Contact tant que la valeur n’est pas renseignée.
-const lienOuContact = (url) => (estEmplacement(url) ? '#contact' : url)
-
+// Seuls les réseaux renseignés sont affichés.
 export const liensReseaux = [
-  {
-    id: 'whatsapp',
-    label: 'WhatsApp',
-    href: estEmplacement(profil.whatsapp) ? '#contact' : lienWhatsApp(),
-  },
-  { id: 'linkedin', label: 'LinkedIn', href: lienOuContact(profil.reseaux.linkedin) },
-  { id: 'facebook', label: 'Facebook', href: lienOuContact(profil.reseaux.facebook) },
-  { id: 'email', label: 'E-mail', href: lienEmail },
+  { id: 'whatsapp', label: 'WhatsApp', valeur: profil.whatsapp, href: lienWhatsApp() },
+  { id: 'linkedin', label: 'LinkedIn', valeur: profil.reseaux.linkedin },
+  { id: 'facebook', label: 'Facebook', valeur: profil.reseaux.facebook },
+  { id: 'email', label: 'E-mail', valeur: profil.email, href: lienEmail },
 ]
+  .filter((reseau) => !estEmplacement(reseau.valeur))
+  .map(({ id, label, valeur, href }) => ({ id, label, href: href ?? valeur }))
 
 export const navigation = [
   { id: 'accueil', label: 'Accueil', href: '#accueil' },
@@ -70,10 +67,10 @@ export const navigation = [
 ]
 
 export const motsCles = [
-  'CLIM AUTO',
+  'SPLIT & CASSETTE',
+  'CLIMATISATION VRV',
+  'CONTENEURS FRIGORIFIQUES',
   'CHAMBRES FROIDES',
-  'R134a · R1234yf',
-  'GROUPES FROIDS',
-  'SPLIT & VRV',
   'DIAGNOSTIC',
+  'FLUIDES FRIGORIGÈNES',
 ]

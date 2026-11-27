@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { useReducedMotion, useScroll, useTransform } from 'motion/react'
+import * as m from 'motion/react-m'
 import Reveal from './Reveal.jsx'
 import './SectionTitle.css'
 
@@ -11,9 +12,9 @@ function MotFond({ children }) {
   const x = useTransform(scrollYProgress, [0, 1], reduit ? [0, 0] : [80, -80])
 
   return (
-    <motion.div ref={ref} className="section-title__fond" aria-hidden="true" style={{ x }}>
+    <m.div ref={ref} className="section-title__fond" aria-hidden="true" style={{ x }}>
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 

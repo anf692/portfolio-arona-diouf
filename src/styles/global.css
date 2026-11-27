@@ -197,6 +197,10 @@ ul {
   transform: translateY(-200%);
 }
 
+main:focus {
+  outline: none;
+}
+
 .skip-link:focus-visible {
   transform: none;
   color: var(--color-white);

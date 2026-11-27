@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { useReducedMotion, useScroll, useTransform } from 'motion/react'
+import * as m from 'motion/react-m'
 import { motsCles } from '../data/profil.js'
 import './Marquee.css'
 
@@ -30,11 +31,11 @@ export default function Marquee() {
 
   return (
     <div ref={ref} className="marquee" role="region" aria-label="Domaines d’intervention">
-      <motion.div className="marquee__track" style={{ x }}>
+      <m.div className="marquee__track" style={{ x }}>
         {Array.from({ length: COPIES }, (_, index) => (
           <Ligne key={index} cachee={index > 0} />
         ))}
-      </motion.div>
+      </m.div>
     </div>
   )
 }
