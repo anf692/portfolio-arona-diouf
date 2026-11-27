@@ -1,4 +1,6 @@
+import Expertises from './components/Expertises.jsx'
 import Hero from './components/Hero.jsx'
+import Realisations from './components/Realisations.jsx'
 import Marquee from './components/Marquee.jsx'
 import Navbar from './components/Navbar.jsx'
 
@@ -14,6 +16,10 @@ export default function App() {
           <Hero />
         </div>
         <Marquee />
+        <div className="container">
+          <Expertises />
+          <Realisations />
+        </div>
       </main>
     </div>
   )
