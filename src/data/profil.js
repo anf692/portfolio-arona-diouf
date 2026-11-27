@@ -17,7 +17,7 @@ export const profil = {
   // Numéro utilisé pour WhatsApp et pour le formulaire de contact
   whatsapp: '+221 78 390 15 03',
   email: 'dioufarona913@gmail.com',
-  experience: { valeur: '10 mois', texte: 'd’expérience terrain en entreprise' },
+  experience: { valeur: '2 ans', texte: 'd’expérience terrain en entreprise' },
   // Image placée dans public/images/
   photo: '/images/arona-diouf.jpg',
   photoAlt: 'Portrait d’Arona Diouf',

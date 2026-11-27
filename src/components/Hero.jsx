@@ -66,9 +66,6 @@ export default function Hero() {
               Demander une intervention
               <Icon name="fleche" size={16} strokeWidth={2.4} />
             </a>
-            <a href="#realisations" className="btn btn-glass glass hero__secondaire">
-              Voir mes réalisations
-            </a>
           </div>
         </div>
 
