@@ -7,7 +7,7 @@ import './Hero.css'
 
 function HeroPhoto({ y }) {
   return (
-    <m.div className="hero__photo" style={{ y }}>
+    <m.div className={`hero__photo${profil.photo ? ' hero__photo--image' : ''}`} style={{ y }}>
       {profil.photo ? (
         <img className="hero__photo-img" src={profil.photo} alt={profil.photoAlt} fetchPriority="high" />
       ) : (
