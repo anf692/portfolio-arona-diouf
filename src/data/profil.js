@@ -66,6 +66,14 @@ export const navigation = [
   { id: 'contact', label: 'Contact', href: '#contact' },
 ]
 
+// CV téléchargeable (fichier placé dans public/)
+export const cv = {
+  label: 'CV',
+  href: '/CV-Arona-Diouf.pdf',
+  fichier: 'CV-Arona-Diouf.pdf',
+  description: 'Télécharger le CV (PDF)',
+}
+
 export const motsCles = [
   'SPLIT & CASSETTE',
   'CLIMATISATION VRV',

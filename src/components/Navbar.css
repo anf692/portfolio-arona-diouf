@@ -58,6 +58,12 @@
   color: var(--color-ink);
 }
 
+.navbar__cv {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .navbar__cta {
   display: flex;
   align-items: center;

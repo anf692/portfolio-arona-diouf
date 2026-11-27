@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { liensReseaux, navigation } from '../data/profil.js'
+import { cv, liensReseaux, navigation } from '../data/profil.js'
 import Icon from './Icon.jsx'
 import './MobileMenu.css'
 
@@ -81,6 +81,21 @@ export default function MobileMenu({ onFermer }) {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={cv.href}
+              download={cv.fichier}
+              className="mobile-menu__link"
+              aria-label={cv.description}
+              onClick={fermerSurLien}
+            >
+              {cv.label}
+              <span className="mobile-menu__num mobile-menu__cv">
+                PDF
+                <Icon name="telecharger" size={16} strokeWidth={2.4} />
+              </span>
+            </a>
+          </li>
         </ul>
 
         <div className="mobile-menu__footer">

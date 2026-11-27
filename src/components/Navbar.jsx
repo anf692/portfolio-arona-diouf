@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { navigation, nomComplet } from '../data/profil.js'
+import { cv, navigation, nomComplet } from '../data/profil.js'
 import Icon from './Icon.jsx'
 import MobileMenu from './MobileMenu.jsx'
 import './Navbar.css'
@@ -29,6 +29,17 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={cv.href}
+              download={cv.fichier}
+              className="navbar__link navbar__cv"
+              aria-label={cv.description}
+            >
+              {cv.label}
+              <Icon name="telecharger" size={16} strokeWidth={2.2} />
+            </a>
+          </li>
         </ul>
         <a href="#contact" className="navbar__cta">
           Devis
