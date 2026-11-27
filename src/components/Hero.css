@@ -359,7 +359,11 @@
   }
 
   .hero__photo--image {
-    aspect-ratio: 3 / 4;
+    height: 160px;
+  }
+
+  .hero__photo--image .hero__photo-img {
+    object-position: center top;
   }
 
   .hero__photo-placeholder {
