@@ -1,0 +1,46 @@
+:root {
+  /* Couleurs */
+  --color-bg: #f3f5f8;
+  --color-ink: #0b1b2b;
+  --color-accent: #003a70;
+  --color-accent-hover: #00284d;
+  --color-text-muted: #374151;
+  --color-nav: #1d3347;
+  --color-text-on-dark: #e2e8f0;
+  --color-available: #1fa463;
+  --color-star: #7ccbf2;
+  --color-white: #ffffff;
+
+  /* Emplacements photo */
+  --photo-1: #dce8f2;
+  --photo-2: #d6e6f2;
+  --photo-3: #e2eaf1;
+  --photo-4: #d9e5ee;
+  --photo-dark: #12283d;
+
+  /* Typographie */
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --tracking-title: -0.04em;
+  --tracking-eyebrow: 0.18em;
+
+  /* Rayons */
+  --radius-pill: 999px;
+  --radius-section: 40px;
+  --radius-card: 32px;
+  --radius-card-sm: 24px;
+
+  /* Mise en page */
+  --container: 1320px;
+  --gutter: 24px;
+  --section-gap: 120px;
+
+  /* Mouvement */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 639px) {
+  :root {
+    --gutter: 20px;
+    --section-gap: 80px;
+  }
+}

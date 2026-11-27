@@ -1,0 +1,22 @@
+# Dépendances et build
+node_modules
+dist
+dist-ssr
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Éditeur / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# Kit de maquettes (local uniquement)
+portfolio-froid-kit/
+CLAUDE.md
+.claude/
